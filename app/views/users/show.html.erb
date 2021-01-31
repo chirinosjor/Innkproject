@@ -1,0 +1,75 @@
+<div class="section">
+  <div class="section-title">
+    <h1><%= @user.name %></h1>
+  </div>
+
+
+  <div class="user-detail">
+    <h2>Detalles del usuario</h2>
+    <div class="details">
+      <h3>Identificador del usuario:</h3> <p><%= @user.id %></p>
+      <h3>Email del usuario:</h3> <p><%= @user.email %></p>
+      <h3>Fecha de registro:</h3> <p><%= @user.created_at.strftime("%d/%m/%Y") %></p>
+      <h3>Peliculas arrendadas:</h3> <p><%= @user.movies.count %></p>
+      <h3>Series arrendadas:</h3> <p><%= @user.series.count %></p>
+    </div>
+  </div>
+  <div class="buttons">
+    <div class="rent-movie">
+      <%=  link_to "Arrendar peliculas", rent_movies_user_path, class:"button3" %>
+    </div>
+
+    <div class="rent-series">
+      <%=  link_to "Arrendar Series", rent_series_user_path, class:"button3" %>
+    </div>
+  </div>
+
+  <div class="table">
+    <div class="section-title">
+      <h1>Peliculas arrendadas</h1>
+    </div>
+    <table>
+      <tr>
+        <thead>
+          <th>Nombre</th>
+          <th>Genero</th>
+          <th>Duración</th>
+          <th>Precio</th>
+        </thead>
+      </tr>
+      <% @user.movies.each do |movie| %>
+      <tr>
+      <td><%= movie.title %></td>
+      <td><%= movie.genre %></td>
+      <td><%= movie.runtime %></td>
+      <td><%= movie.price %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <div class="table">
+    <div class="section-title">
+      <h1>Series arrendadas</h1>
+    </div>
+    <table>
+      <tr>
+        <thead>
+          <th>Nombre</th>
+          <th>Genero</th>
+          <th>Temporadas</th>
+          <th>Precio</th>
+        </thead>
+      </tr>
+      <% @user.series.each do |series| %>
+      <tr>
+      <td><%= series.title %></td>
+      <td><%= series.genre %></td>
+      <td><%= series.seasons %></td>
+      <td><%= series.price %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+  
+</div>

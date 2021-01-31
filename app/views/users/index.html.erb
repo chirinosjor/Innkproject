@@ -1,0 +1,35 @@
+<div class="section">
+  <div class="section-title">
+    <h1>Usuarios</h1>
+  </div>
+
+
+  <div class="table">
+    <table>
+      <tr>
+        <thead>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Fecha de registro</th>
+          <th>Peliculas arrendas</th>
+          <th>Series Arrendadas</th>
+          <th>Acciones disponibles</th>
+        </thead>
+      </tr>
+      <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.created_at.strftime("%d/%m/%Y") %></td>
+        <td><%= user.movies.count %></td>
+        <td><%= user.series.count %></td>
+        <td>
+            <%= link_to "Mostrar", user_path(user), class:"button3" %>
+            <%= link_to "Editar", edit_user_path(user), class:"button3" %>
+            <%= link_to "Eliminar", user, method: :delete, data: { confirm: "¿Eliminar información?"}, class:"button3" %>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

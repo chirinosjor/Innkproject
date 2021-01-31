@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  email: MyString
+  rented_movies: 1
+  rented_series: 1
+
+two:
+  name: MyString
+  email: MyString
+  rented_movies: 1
+  rented_series: 1

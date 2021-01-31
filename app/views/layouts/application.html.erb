@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Innkflix</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="main-content">
+      <div class="sidebar">
+        <%= render "layouts/sidebar" %>
+      </div>
+      <div class="main-info">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

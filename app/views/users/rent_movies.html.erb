@@ -1,0 +1,29 @@
+<div class="section">
+  <div class="section-title">
+    <h1>Peliculas disponibles para arrendar</h1>
+  </div>
+  <%= form_tag(create_movie_rent_user_path) do %>
+  <table>
+    <tr>
+      <thead>
+        <th>Titulo</th>
+        <th>Género</th>
+        <th>Duración</th>
+        <th>Precio de arriendo</th>
+        <th>Seleccionar pelicula</th>
+      </thead>
+    </tr>
+
+      <% @movies.each do |movie| %>
+        <tr>
+          <td><%= movie.title %></td>
+          <td><%= movie.genre %></td>
+          <td><%= movie.runtime %></td>
+          <td><%= movie.price %></td>
+          <td><%= check_box_tag 'movies_id[]', movie.id %></td>
+        </tr>
+      <% end %>
+  </table>
+    <div class="submit"><%= submit_tag 'Save' %></div>
+    <% end %>
+</div>

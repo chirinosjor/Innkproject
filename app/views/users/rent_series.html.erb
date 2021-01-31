@@ -1,0 +1,29 @@
+<div class="section">
+  <div class="section-title">
+    <h1>Series disponibles para arrendar</h1>
+  </div>
+  <%= form_tag(create_series_rent_user_path) do %>
+  <table>
+    <tr>
+      <thead>
+        <th>Titulo</th>
+        <th>Género</th>
+        <th>Temporadas</th>
+        <th>Precio de arriendo</th>
+        <th>Seleccionar Serie</th>
+      </thead>
+    </tr>
+
+      <% @series.each do |series| %>
+        <tr>
+          <td><%= series.title %></td>
+          <td><%= series.genre %></td>
+          <td><%= series.seasons %></td>
+          <td><%= series.price %></td>
+          <td><%= check_box_tag 'series_id[]', series.id %></td>
+        </tr>
+      <% end %>
+  </table>
+    <div class="submit"><%= submit_tag 'Save' %></div>
+    <% end %>
+</div>

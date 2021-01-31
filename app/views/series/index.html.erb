@@ -1,0 +1,23 @@
+<div class="section">
+  <div class="section-title">
+    <h1>Series disponibles para arrendar</h1>
+  </div>
+  <table>
+    <tr>
+      <thead>
+        <th>Titulo</th>
+        <th>Género</th>
+        <th>Temporadas</th>
+        <th>Precio de arriendo</th>
+      </thead>
+    </tr>
+    <% @series.each do |series| %>
+    <tr>
+      <td><%= series.title %></td>
+      <td><%= series.genre %></td>
+      <td><%= series.seasons %></td>
+      <td><%= series.price %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

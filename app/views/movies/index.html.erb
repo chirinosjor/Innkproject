@@ -1,0 +1,23 @@
+<div class="section">
+  <div class="section-title">
+    <h1>Peliculas disponibles para arrendar</h1>
+  </div>
+  <table>
+    <tr>
+      <thead>
+        <th>Titulo</th>
+        <th>Género</th>
+        <th>Duración</th>
+        <th>Precio de arriendo</th>
+      </thead>
+    </tr>
+    <% @movies.each do |movie| %>
+    <tr>
+      <td><%= movie.title %></td>
+      <td><%= movie.genre %></td>
+      <td><%= movie.runtime %></td>
+      <td><%= movie.price %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

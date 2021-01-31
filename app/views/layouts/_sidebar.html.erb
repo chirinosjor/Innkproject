@@ -1,0 +1,26 @@
+<div>
+  <div class="sidebar-title">
+    <div class="logo">
+      <%= image_tag("logo.png") %>
+    </div>
+    <h1>Panel de administración</h1>
+  </div>
+
+  <hr>
+
+  <div class="sidebar-link">
+    <%=  link_to "Ver usuarios", users_path, class:"button3" %>
+  </div>
+
+  <div class="sidebar-link">
+    <%=  link_to "Crear usuario", new_user_path, class:"button3" %>
+  </div>
+
+  <div class="sidebar-link">
+    <%=  link_to "Ver peliculas disponibles", movies_path, class:"button3" %>
+  </div>
+
+    <div class="sidebar-link">
+    <%=  link_to "Ver series disponibles", series_index_path, class:"button3" %>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="section">
+  <div class="section-title">
+    <h1>Editar usuario</h1>
+  </div>
+  <div class="form">
+    <%= form_for @user do |f|%>
+      <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+
+      <div>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+      </div>
+
+      <div>
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </div>
+</div>
